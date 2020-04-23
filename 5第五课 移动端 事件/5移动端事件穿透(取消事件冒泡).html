@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		
+		<title>移动端事件穿透(事件冒泡)</title>
+		<style type="text/css">
+			#div1{
+				width:100px;
+				height:100px;
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+		<a href="http://www.miaov.com">点我呀！！！</a>
+		</div>
+		<script type="text/javascript">
+			var div = document.getElementById('div1');
+			div.addEventListener('touchend', end);
+
+			function end(e) {
+				if (e.target.nodeName=="A") {
+					stopBubble(e);
+				} else{
+					this.style.display = 'none';
+				}
+				
+				
+			}
+			/* 移动端事件穿透(取消事件冒泡)  自己封装的方法 */
+			function stopBubble(event) {
+				if (event.stopPropagation) {
+					event.stopPropagation(); /*1.取消冒泡 （不支持IE9下）*/
+				} else {
+					event.cancelBubble = true; /* 2.原来是IE独有*/
+				}
+			}
+		</script>
+	</body>
+</html>

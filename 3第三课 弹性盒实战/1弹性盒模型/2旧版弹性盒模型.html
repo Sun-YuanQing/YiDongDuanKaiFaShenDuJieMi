@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>旧版弹性盒模型-适应大多移动端</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+			}
+
+			#box {
+				width: 100%;
+				outline: 1px solid #0062CC;
+				/*新版弹性盒模型*/
+				/*display:flex；*/
+				
+				/*老版弹性盒模型（安卓适应性好）*//* webkit浏览器内核名称 *//* 谷歌不支持？ */
+				display: -webkit-box；
+			}
+
+			#box div {
+				width: 50px;
+				height: 50px;
+				background-color: #007AFF;
+				/* margin: auto; */
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+		</div>
+	</body>
+</html>

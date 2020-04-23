@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+
+		<title>2响应式 媒体查询</title>
+		<!-- 不同的情况引入不同的css -->
+		<!--
+		 <link rel="stylesheet" href="el. css" media="all and(min-width:400px)" />
+		<link rel="stylesheet" href="e2. css" media="all and (min-width: 500px)" />
+		<link rel="stylesheet" href="e3. css" media="all and (min-width:700px)" />
+		<link rel="stylesheet" href="e4. css" media="all and(min-width:800px)" /> 
+		-->
+		<style type="text/css">
+			 /* 不同的情况引入不同的css */
+			/* @ import url(e1. css)(min-width:400px); */
+			
+			/* all 所有媒体
+			braille 盲文触觉设备
+			embossed 盲文打印机
+			print 手持设备
+			projection 打印预览
+			screen 彩屏设备
+			speech‘听觉类似的媒体类型
+			tty不适用像素的设备
+			tv电视 */
+			
+			/* 关键字 */
+			/* and 连接
+				@media all and (min-width：200px) and (max-width：300px)
+				not 关键字是用来排除某种制定的媒体类型
+				@media not tv
+				only 某种特定的媒体类型
+				@media only tv 
+			*/
+		   
+			/* min-width：
+			当屏幕大小大于等于某个值的时候识别
+			max-width：
+			当屏幕大小小于等于某个值的时候识别
+			 */
+			
+			/*会受键盘影响  
+			 @media（orientation: portrai） 屏幕垂直
+			 @media（orientation：1andscape） 屏幕水平 
+			 */
+			 #box {
+				width: 100px;
+				height: 100px;
+				background: red;
+                float: left;
+			}
+
+			.box1 {
+				width: 100px;
+				height: 100px;
+				background: green;
+                float: left;
+			}
+			.box1:before{
+				content:"pc端"
+			}
+
+@media only screen  and (min-width:200px) and (max-width:500px) {
+				#box {
+					background: orange;
+					clear:both;
+				}
+
+				.box1 {
+					background: yellow;
+					clear:both;
+				}
+				.box1:before{
+					content:"移动端"
+				}
+			}
+
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id="box"></div>
+		<div class="box1"></div>
+	</body>
+</html>

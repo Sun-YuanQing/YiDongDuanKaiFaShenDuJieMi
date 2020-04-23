@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" charset="utf-8">
+		    (function () {
+		        var w = window.screen.width;
+		        var targetW = 550; 
+		        var scale = w / targetW; //当前尺寸/目标尺寸
+		        var meta = document.createElement("meta");
+		        meta.name = "viewport";
+		        meta.content = "user-scalable=no,initial-scale=" +
+					scale + ",minimum-scale=" + scale + ",maximum-scale=" + scale + ",width=" + targetW;
+		        console.log(scale);
+		      //  alert(scale);
+		        document.head.appendChild(meta);
+		    }());
+		</script>
+		<style type="text/css">
+			body {
+				margin: 0;
+			} 
+
+			div {
+				width:25%;
+				height: 100px;
+				float: left;
+			}
+
+			.box1 {
+				background: red;
+			}
+
+			.box2 {
+				background: blue;
+			}
+
+			.box3 {
+				background: green;
+			}
+
+			.box4 {
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wid" style=" width: 100%;">
+			<div class="box1"></div>
+			<div class="box2"></div>
+			<div class="box3"></div>
+			<div class="box4"></div>
+		</div>
+		<div class="size" style="font-size:33px">box4</div>
+		<script type="text/javascript">
+		    var wid = document.getElementById("wid");
+		    console.log(wid.offsetWidth);
+		    // alert(wid.offsetWidth);
+		</script>
+	</body>
+</html>

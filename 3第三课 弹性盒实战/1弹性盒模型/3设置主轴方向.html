@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>设置主轴方向</title>
+		<style type="text/css">
+			* {
+				margin: 0px;
+			}
+			
+			.box {
+				height: 200px;
+				outline: 1px solid #0062CC;
+				/*新版弹性盒模型*/
+				display: flex;
+				/*设置主轴方向为水平方向*/
+				/* 默认 row水平方向*/
+				/*flex-direction:row；*/
+				/*设置主轴方向为垂直方向*/
+				/* flex-direction:column; */
+				/*老版弹性盒模型*/
+				/* display:-webkit-box; */
+				/*设置主轴方向为水平方向*/
+				/*-webkit-box-orient:horizontal；*/
+				/*设置主轴方向为垂直方向*/
+				/*-webkit-box-orient:vertical；*/
+			}
+
+			.column {
+				height: 200px;
+				outline: 1px solid #0062CC;
+				display: flex;
+				/*新版弹性盒模型*/
+				display: flex;
+				/*设置主轴方向为水平方向*/
+				/*flex-direction:row；*/
+				/*设置主轴方向为垂直方向*/
+				flex-direction: column;
+				/*老版弹性盒模型*/
+				/* display:-webkit-box; */
+				/*设置主轴方向为水平方向*/
+				/*-webkit-box-orient:horizontal；*/
+				/*设置主轴方向为垂直方向*/
+				/*-webkit-box-orient:vertical；*/
+			}
+
+			div div {
+				
+				width: 50px;
+				height: 50px;
+				background-color: #007AFF;
+				/* margin: auto; */
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+		</div>
+			<div class="column">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0px;
+				overflow: hidden;
+				/* overflow-x: scroll; */
+			}
+
+			#div1 {
+
+				width: 2000px;
+				height: 100px;
+				background-color: orange;
+				/* position: absolute;
+				top: 0px;
+				left: 0px;
+				opacity: 0.5; */
+
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			123456789
+		</div>
+		<script type="text/javascript">
+			/*
+			IOS10问题:
+			1.IOS10下设置meta禁止用户缩放是不可行的。（使用阻止pc默认事件就可以在IOS10下禁止用户缩放）no
+			2.解决IOS10下溢出隐藏的问题。
+			3.禁止系统默认的滚动条、阻止橡皮筋效果no
+			4.禁止长按选中文字、选中图用no
+			*/
+			/* 1*/
+			document.addEventListener("touchstart", function(ev) {
+				ev.preventDefault();
+			});
+
+
+			var div = document.getElementById('div1');
+		</script>
+	</body>
+</html>

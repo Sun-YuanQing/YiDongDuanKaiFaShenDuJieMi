@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		
+		<title>2移动端事件点透(问题重现)</title>
+		<style type="text/css">
+		
+		#div1{
+			width:100px;
+			height:100px;
+			background-color: orange;
+			position: absolute;
+			top: 0px;
+			left:0px;
+			opacity: 0.5;
+			outline: 1px #007AFF solid;
+		}
+		</style>
+	</head>
+	<body>
+		<a href="http://www.miaov.com">点我呀！！！</a> 
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+			/*
+			移动端的点透：
+			当上层元素发生点击的时候，下层元素也有点击（焦点）特性，在300ms之后，如果上层元素消失或者隐藏，目标点就会“漂移”到下层元素身上，就会触发点击行为。
+		
+			*/
+			var div = document.getElementById('div1');
+			div.addEventListener('touchend', end);
+
+			function end() {
+				this.style.display = 'none';
+			}
+		</script>
+	</body>
+</html>
